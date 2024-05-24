@@ -1,6 +1,8 @@
 import axios from "axios";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import { auth } from "../config/firebase";
 
 export default function FormLogin() {
   const [email, setEmail] = useState("");
@@ -13,6 +15,16 @@ export default function FormLogin() {
     };
     const resposta = await axios.post("http://localhost:3000/login", payload);
     console.log(resposta);
+  }
+
+  async function handleLoginWithFirebase(e) {
+    e.preventDefault();
+    try {
+      const user = await signInWithEmailAndPassword(auth, email, senha);
+      console.log(user);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   return (
