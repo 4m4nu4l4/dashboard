@@ -28,8 +28,8 @@ export default function FormLogin() {
   }
 
   return (
-    <Container>
-      <Form>
+    <Container style={{ backgroundColor: "#ECCEAD", padding: "20px" }}>
+      <Form onSubmit={handleLoginWithFirebase}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="email"

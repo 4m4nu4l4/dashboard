@@ -15,7 +15,7 @@ export default function Header() {
         <Container>
           <Navbar.Brand href="#home">
             <Image
-              src={require("../assets/images/lojapenhores.png")}
+              src={require("../images/LOGO.jsp")}
               alt="logo"
               style={{ width: "100px" }}
             />
