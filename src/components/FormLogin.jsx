@@ -1,34 +1,29 @@
+import React, { useState } from "react";
 import axios from "axios";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function FormLogin() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
-  async function handleLogin() {
-    const payload = {
-      email: email,
-      senha: senha,
-    };
-    const resposta = await axios.post("http://localhost:3000/login", payload);
-    console.log(resposta);
-  }
+  const navigate = useNavigate();
 
   async function handleLoginWithFirebase(e) {
     e.preventDefault();
     try {
-      const user = await signInWithEmailAndPassword(auth, email, senha);
-      console.log(user);
-    } catch (e) {
-      console.log(e);
+      const userCredential = await signInWithEmailAndPassword(auth, email, senha);
+      // If login successful, navigate to '/index'
+      navigate('/index');
+    } catch (error) {
+      console.log("Error signing in: ", error);
+      // Handle error logging in
     }
   }
 
   return (
-    <Container style={{ backgroundColor: "#ECCEAD", padding: "20px" }}>
+    <Container style={{ backgroundColor: "", padding: "20px" }}>
       <Form onSubmit={handleLoginWithFirebase}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control

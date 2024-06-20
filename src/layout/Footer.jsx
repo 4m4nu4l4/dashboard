@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <Container
       style={{
-        backgroundColor: "#B2D0D2",
+        backgroundColor: "#52271C",
       }}
     >
       <Row>
@@ -18,14 +18,14 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                color: "#766146",
+                color: "#ECCEAD",
               }}
             >
-              Endereço Loja Física!
+              Endereço caixa postal
             </h4>
             <p
               style={{
-                color: "#EB9D51",
+                color: "#ECCEAD",
                 fontWeight: "bold"
               }}
             >
@@ -45,7 +45,7 @@ export default function Footer() {
           <div>
             <h4
               style={{
-                color: "#766146",
+                color: "#ECCEAD",
               }}
             >
               Redes sociais
@@ -54,7 +54,7 @@ export default function Footer() {
               style={{
                 textDecoration: "none",
                 fontWeight: "bold",
-                color: "#EB9D51"
+                color: "#ECCEAD"
               }}
             >
               Facebook
@@ -64,7 +64,7 @@ export default function Footer() {
               style={{
                 textDecoration: "none",
                 fontWeight: "bold",
-                color: "#EB9D51",
+                color: "#ECCEAD",
               }}
             >
               Instagram

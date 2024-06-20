@@ -7,14 +7,15 @@ import FormRegister from "../components/FormRegister";
 
 export default function Login() {
   const [key, setKey] = useState("login");
+
   return (
     <Container
       fluid
       className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "100vh", backgroundColor: "#ECCEAD" }} // Define a cor de fundo aqui
     >
       <Container
-        className=" align-items-center shadow-lg p-3 mb-5 bg-white rounded p-5 "
+        className="align-items-center shadow-lg p-3 mb-5 bg-white rounded p-5"
         style={{ maxWidth: 400 }}
       >
         <Row>

@@ -6,7 +6,7 @@ export default function Body() {
   return (
     <>
       <Header />
-      <div
+      {/* <div
         style={{
           fontFamily: "Arial, sans-serif",
           backgroundColor: "#FAF1E5",
@@ -15,9 +15,9 @@ export default function Body() {
           padding: "20px 0px",
           minHeight: "64.8vh",
         }}
-      >
+      > */}
         <Outlet />
-      </div>
+      {/* </div> */}
       <div
         style={{
           backgroundColor: "#FAF1E5",

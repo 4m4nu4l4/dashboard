@@ -2,6 +2,7 @@ import { Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -14,19 +15,16 @@ export default function Header() {
       >
         <Container>
           <Navbar.Brand href="#home">
-            <Image
-              src={require("../images/LOGO.jsp")}
+          {/* <Image
+              src={require("../images/LOGO.jsp")} 
               alt="logo"
               style={{ width: "100px" }}
-            />
+            /> */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link>Quem Somos</Nav.Link>
-              <Nav.Link>Produtos</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+             <Link  to="/albuns">Albuns</Link>
+           </Navbar.Collapse>
         </Container>
       </Navbar>
     </>

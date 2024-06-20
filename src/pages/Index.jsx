@@ -7,80 +7,77 @@ const styles = {
   section: {
     padding: "20px",
     margin: "20px auto",
-    maxWidth: "550px",
     border: "1px solid #4D4D4D",
-    backgroundColor: "#F6F5F5",
+    backgroundColor: "#ECCEAD",
     borderRadius: "8px",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
-  loginSection: {
-    border: "1px solid #4D4D4D",
-    borderRadius: "8px",
+  recipeSection: {
     padding: "20px",
-    margin: "20px 0",
+    margin: "20px auto",
+    border: "1px solid #4D4D4D",
+    backgroundColor: "#ECCEAD",
+    borderRadius: "8px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
+  fullHeightRow: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "stretch",
   },
 };
+
+function TextControlsExample() {
+  return (
+    <Form>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Compartilhe sua receita preferida com a gente!</Form.Label>
+        <Form.Control type="text" placeholder="1 xícara de.." />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Modo de preparo:</Form.Label>
+        <Form.Control as="textarea" placeholder="Misture os igredientes secos.." rows={3} />
+      </Form.Group>
+      <Button
+        style={{
+          backgroundColor: "#52271C",
+          borderColor: "#C9940B",
+          color: "white",
+          fontWeight: "bold",
+          fontFamily: "Roboto",
+        }}
+        type="submit"
+      >
+        Enviar
+      </Button>
+    </Form>
+  );
+}
 
 export default function Contato() {
   return (
     <Container>
-      <Row>
-        <Col md={6}>
+      <Row style={styles.fullHeightRow}>
+        <Col md={12}>
           <section style={styles.section}>
-            <h1>Comidas deliciosas</h1>
-            <p>
-              Nosso horário de funcionamento
-              <br />
-              Das 08:00 as 17:00
-            </p>
-
+            <h4>Comidas do nosso Brasil 💚</h4>
             <p>📞(47) 47 00000-0000</p>
             <p>✉️ cozinhabrasileira@gmail.com</p>
           </section>
         </Col>
-        <Col md={6}>
-          <section style={styles.loginSection}>
-            <h2>Faça seu Login aqui!</h2>
-            <BasicExample />
+        <Col md={12}>
+          <section style={styles.recipeSection}>
+            <TextControlsExample />
           </section>
         </Col>
       </Row>
-    </Container>
-  );
-}
-
-function BasicExample() {
-  return (
-    <Container>
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email:</Form.Label>
-          <Form.Control type="email" placeholder="Digite seu email" />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Senha:</Form.Label>
-          <Form.Control type="password" placeholder="Digite sua senha" />
-          <Form.Text className="text-muted">
-            Não compartilhe sua senha com ninguém!
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Lembrar minha senha" />
-        </Form.Group>
-        <Button
-          style={{
-            backgroundColor: "#C9940B",
-            borderColor: "#C9940B",
-            color: "white",
-            fontWeight: "bold",
-            fontFamily: "Roboto",
-          }}
-          type="submit"
-        >
-          Enviar
-        </Button>
-      </Form>
     </Container>
   );
 }
